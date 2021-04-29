@@ -2,47 +2,214 @@
 <html lang="en">
 
 <head>
-    <script src="jquery-3.6.0.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("#panel").click(function () {
-                $("#panel").slideUp("fast");
-            });
-            $("#slide").click(function () {
-                $("#panel").slideDown(5000);
-            }); $("#flip").click(function () {
-                $("#panel").slideToggle("slow");
-            });
-            $("#stop").click(function () {
-                $("#panel").stop();
-            });
-        });
-    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stand UP!</title>
+    <script src="./external.js"></script>
     <style>
-        #slide,
-        #panel,
-        #flip {
-            padding: 5px;
-            text-align: center;
-            background-color: #e5eecc;
-            border: solid 1px #c3c3c3;
+        #top {
+            background-color: rgb(21, 47, 85);
+            border-radius: 20px;
+            height: 100px;
+            margin-bottom: 10px;
         }
 
-        #panel {
-            padding: 70px;
-            display: none;
-            background-color: #ffff00;
+        #devInfo {
+            position: absolute;
+            left: 95%;
+            top: 3.7%;
+            color: white;
+            font-size: 35px;
+            font-weight: bolder;
+            background: transparent;
+            border-style: solid;
+            border-radius: 50%;
+        }
+
+        #box {
+            position: relative;
+            height: auto;
+            margin: auto;
+        }
+
+        #left {
+            float: left;
+            height: 700px;
+            width: 40%;
+            position: relative;
+        }
+
+        #information {
+            float: left;
+            height: 700px;
+            width: 60%;
+            position: absolute;
+            left: 660px;
+        }
+
+        #explain {
+            background-color: #81b1ce;
+            border-radius: 20px;
+            height: 20%;
+            margin-bottom: 1.5%;
+        }
+
+        #bottom {
+            /* height: 100px; */
+            width: 100%;
+            clear: both;
+            float: left;
+        }
+
+        .info {
+            position: absolute;
+            background-color: gray;
+            height: 25px;
+            width: 25px;
+            border-style: none;
+            border-radius: 50%;
+            z-index: 1;
+            transition: width 0.5s, height 0.5s, background-color 1s, border-radius 1s;
+        }
+
+        .info:hover {
+            background-color: cornflowerblue;
+            width: 60px;
+            height: 40px;
+            border-radius: 20px;
+        }
+
+        #infoIndex0 {
+            left: 400px;
+            top: 130px;
+        }
+
+        #infoIndex1 {
+            left: 350px;
+            top: 180px;
+        }
+
+        #infoIndex2 {
+            left: 330px;
+            top: 250px;
+        }
+
+        #infoIndex3 {
+            left: 355px;
+            top: 400px;
+        }
+
+        #infoIndex4 {
+            left: 400px;
+            top: 220px;
+        }
+
+        .name {
+            margin: 0px;
+            font-size: 17px;
+            opacity: 0;
+            transition: opacity 0.5s 0.5s;
+        }
+
+        .name:hover {
+            opacity: 1.0;
+        }
+
+        #muscleName {
+            padding-top: 10px;
+            padding-left: 10px;
+            font-size: 20px;
+            font-weight: bolder;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #muscleExp {
+            padding-left: 10px;
+            padding-right: 7px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .video {
+            background-color: #81b1ce;
+            font-size: 13px;
+            color: rgb(21, 47, 85);
+            border-style: solid;
+            border-color: rgb(21, 47, 85);
+        }
+
+        #rotateButton {
+            background-color: white;
+            border-style: none;
+            border-radius: 20%;
+            margin-left: 300px;
+            padding-top: 5px;
+            transition : background-color 1s;
+        }
+
+        #rotateButton:hover {
+            background-color:lightgray;
         }
     </style>
 </head>
+<header>
+    <div id="top">
+        <img src="title.jpg" height="100px" style="margin-left : 20px;">
+        <button id="devInfo" onclick="devInfo()">&nbsp;i&nbsp;</button>
+        <script>
+            function devInfo() {
+                alert("StandUP! : Web Trainer for You\n\n- Developer Info.\n박규림 PARK GYURIM\n\nguy021898@naver.com\n+8210-7672-9902\nKOREA");
+            }
+        </script>
+    </div>
+</header>
 
 <body>
-    <div id="slide">[오늘의 공지사항]</div>
-    <div id="panel">오늘은 jQuery 프로그램을 학습합니다.<br>
-        예제를 작성한 후 실행해보세요.</div>
-    <div id="flip">Toggle slide</div>
-    <p></p>
-    <button id="stop">Stop sliding</button>
+    <div id="box">
+        <div id="left">
+            <button class="info" id="infoIndex0" onclick="explanation(0)">
+                <p class="name" id="nameIndex0">어깨</p>
+            </button>
+            <button class="info" id="infoIndex1" onclick="explanation(2)">
+                <p class="name" id="nameIndex1">가슴</p>
+            </button>
+            <button class="info" id="infoIndex2" onclick="explanation(4)">
+                <p class="name" id="nameIndex2">복근</p>
+            </button>
+            <button class="info" id="infoIndex3" onclick="explanation(6)">
+                <p class="name" id="nameIndex3">허벅지</p>
+            </button>
+            <button class="info" id="infoIndex4" onclick="explanation(8)">
+                <p class="name" id="nameIndex4">팔</p>
+            </button>
+            <img src="front.jpg" id="body" height="100%" style="margin-left : 180px;">
+        </div>
+
+
+        <div id="information">
+            <!-- 설명란 -->
+            <div id="explain">
+                <p id="muscleName"></p>
+                <p id="muscleExp">이미지의 부위를 클릭하면 상세 정보를 볼 수 있습니다.</p>
+                <div id="videoLink" style="text-align: center;">
+                    <button class="video" id="videoLink1" onclick="videoSelect(0)">영상 #1</button>
+                    <button class="video" id="videoLink1" onclick="videoSelect(1)">영상 #2</button>
+                    <button class="video" id="videoLink1" onclick="videoSelect(2)">영상 #3</button>
+                </div>
+            </div>
+
+            <!-- 영상 부분 -->
+            <iframe id="ytVideo" style="border-radius : 20px;" width="100%" height="80%"
+                src="https://www.youtube.com/embed" allowfullscreen>
+            </iframe>
+        </div>
+
+        <div id="bottom">
+            <button type="button" id="rotateButton" onclick="rotate()">
+                <img src="button_rotate.png" width="30px">
+            </button>
+        </div>
+    </div>
 </body>
 
 </html>

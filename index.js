@@ -14,12 +14,12 @@ app.use(express.json())
 app.post('/bookmarks/store', storeBookmarkController)
 app.post('/bookamrks/store', (req, res) => {
     console.log(req.link)
-    res.sendFile(path.resolve(__dirname, 'public/index.html'))
+    res.sendFile(path.resolve(__dirname, 'index.html'))
 })
 
 app.get('/', (req,res) => {
-    res.sendFile(path.resolve(__dirname, 'public/index.html'))
+    res.sendFile(path.resolve(__dirname, 'index.html'))
 })
-app.listen(5000, () => {
+app.listen(4000, () => {
     console.log('App listening on port 4000')
 })

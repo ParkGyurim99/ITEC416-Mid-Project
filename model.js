@@ -67,8 +67,8 @@ function videoSelect(index) {
 
 function rotate() {
     var img = document.getElementById("body");
-    if (img.getAttribute("src") == "./front.jpg") {
-        img.setAttribute("src", "./back.jpg");
+    if (img.getAttribute("src") == "public/front.jpg") {
+        img.setAttribute("src", "public/back.jpg");
         
         // 후면 버튼 로케이션 설정
         document.getElementById("nameIndex0").innerHTML = "승모";
@@ -98,7 +98,7 @@ function rotate() {
     }
     
     else {
-        img.setAttribute("src", "./front.jpg");
+        img.setAttribute("src", "public/front.jpg");
         
         // 전면 버튼 로케이션 설정
         document.getElementById("nameIndex0").innerHTML = "어깨";

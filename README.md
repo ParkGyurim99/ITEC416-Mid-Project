@@ -2,3 +2,6 @@
 Mid-term Project with HTML, CSS, JavaScript
 
 ## Stand UP! Web Trainer for You
+
+2017116586 한성건 
+2017111900 박규림

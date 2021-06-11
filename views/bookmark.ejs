@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stand UP! : Bookmark</title>
+    <style>
+        body {
+            /* background-image : url("pubic/background.jpg"); */
+            background-size : cover;
+        }   
+        
+        #box {
+            position: relative;
+            height: auto;
+            margin: auto;
+            padding-top : 20px;
+        }
+        #leftBox {
+            /* position: relative; */
+            float : left;
+            height : 700px;
+            width : 70%;
+        }
+        #rightBox {
+            /* position: relative; */
+            float: right;
+            background-color : white;
+            width : 28%;
+            height : 700px;
+            margin-left : 10px;
+            opacity: 0.7;
+            border-radius: 20px;
+        }
+
+        a {
+            text-decoration-line : none;
+            color : black;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size : 25px;
+        }
+    </style>
+</head>
+<%- include('layouts/header'); -%>
+
+
+<body background="public/background.jpg">
+    <div id = "box">
+        <!-- <iframe id = "leftBox"name = "videoFrame"></iframe> -->
+        <iframe id="leftBox" name = "videoFrame" style="border-radius : 20px;" width="100%" height="80%"
+                src="https://www.youtube.com/embed" allowfullscreen>
+            </iframe>
+
+        <div id = "rightBox">
+            <h2 style = "color : white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                북마크한 영상</h2>
+            <% for (var i=0; i<bookmarks.length; i++) { %>
+            <a href = " <%- bookmarks[i].link -%> " target = "videoFrame">
+            bookmark <%- i %>
+            </a><br>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

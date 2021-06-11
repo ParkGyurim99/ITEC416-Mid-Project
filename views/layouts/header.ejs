@@ -1,0 +1,63 @@
+<style>
+    #top {
+        /* background-color: rgb(21, 47, 85); */
+        background-color: white;
+        opacity: 0.7;
+        border-radius: 20px;
+        height: 100px;
+        margin-top : 20px;
+        margin-bottom: 10px;
+    }
+    .navLink {
+        /* position: absolute;
+        left: 85%;
+        top: 3.5%; */
+        position: relative;
+        background-color: transparent;
+        color: black;
+        opacity: 0.7;
+        /* border-style: solid;
+        border-color: white;  */
+        padding-right : 15px;
+        padding-left : 15px;
+        font-size: 25px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        border-radius: 10px;
+        text-decoration-line : none;
+    }
+    #devInfo {
+        position: absolute;
+        left: 95%;
+        top: 3.7%;
+        color: white;
+        font-size: 35px;
+        font-weight: bolder;
+        background: transparent;
+        border-style: solid;
+        border-color : white;
+        border-radius: 50%;
+    }
+
+    #navBar {
+        position : absolute;
+        left : 70%;
+        top : 5.5%;
+    }
+</style>
+<header>
+    <div id="top">
+        <a href = "/"> 
+            <img src = "public/title.jpg" height="100px" style="margin-left : 40px;">
+        </a>
+        <div id = "navBar" style = "display:inline-block;">
+            <a class = "navLink" href = "/">HOME</a> |
+            <a class = "navLink" href = "/bookmark">BOOKMARK</a> |
+            <a class = "navLink" onclick = "devInfo()">INFORMATION</a>
+        </div>
+        <script> 
+            function devInfo() {
+                alert("StandUP! : Web Trainer for You\n\n- Developer Info.\n\n박규림 PARK GYURIM\nguy021898@naver.com\n+8210-7672-9902\nKOREA");
+            }
+        </script>
+    </div>
+</header>

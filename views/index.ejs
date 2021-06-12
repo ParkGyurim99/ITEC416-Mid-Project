@@ -1,23 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stand UP!</title>
+    <title>Stand UP! :: Home</title>
     <script src="model.js"></script>
     <style>
         body {
-            /* background-image : url("pubic/background.jpg"); */
             background-size: cover;
-        }
-
-        #top {
-            background-color: rgb(21, 47, 85);
-            border-radius: 20px;
-            height: 100px;
-            margin-bottom: 10px;
         }
 
         #box {
@@ -31,13 +22,17 @@
             float: left;
             height: 700px;
             /* width: 30%; */
-            width : 400px;
+            width : 300px;
             position: relative;
             /* background-color: white; */
             /* border-style: solid;
             border-color : red; */
             border-radius: 20px;
             margin-top: 10px;
+            transition: opacity 1s;
+        }
+        #left:hover {
+            opacity: 1;
         }
 
         #information {
@@ -55,7 +50,12 @@
             opacity: 0.7;
             border-radius: 20px;
             height: 20%;
+            margin-top : 20px;
             margin-bottom: 0.5%;
+            transition: opacity 1s;
+        }
+        #explain:hover {
+            opacity: 0.8;
         }
 
         .info {
@@ -149,10 +149,17 @@
             color: black;
             border-style: solid;
             border-radius: 20px;
+            transition: opacity 1s;
+        }
+        .videoBookmarking:hover {
+            background-color: white;
+            opacity: 1;
+            color: black;
         }
 
         .bodyImages {
-            margin-left : 80px;
+            margin-left : 150px;
+            /*  80px */
             width: 90%;
             height: 90%;
             position: relative;
@@ -184,88 +191,81 @@
         }
     </style>
 </head>
-<!-- ejs -->
+<!-- index.ejs -->
 <%- include('layouts/header'); -%>
-
-    <body background="public/background.jpg">
-        <!-- <body> -->
-        <!-- <div id="background"></div> -->
-        <div id="box">
-            <div id="left">
-                <button class="info" id="infoIndex0" onclick="explanation(0)">
-                    <p class="name" id="nameIndex0">어깨</p>
-                </button>
-                <button class="info" id="infoIndex1" onclick="explanation(2)">
-                    <p class="name" id="nameIndex1">가슴</p>
-                </button>
-                <button class="info" id="infoIndex2" onclick="explanation(4)">
-                    <p class="name" id="nameIndex2">복근</p>
-                </button>
-                <button class="info" id="infoIndex3" onclick="explanation(6)">
-                    <p class="name" id="nameIndex3">허벅지</p>
-                </button>
-                <button class="info" id="infoIndex4" onclick="explanation(8)">
-                    <p class="name" id="nameIndex4">팔</p>
-                </button> -->
+<body background = "public/background.jpg">
+    <div id="box">
+        <div id="left">
+            <button class="info" id="infoIndex0" onclick="explanation(0)">
+                <p class="name" id="nameIndex0">어깨</p>
+            </button>
+            <button class="info" id="infoIndex1" onclick="explanation(2)">
+                <p class="name" id="nameIndex1">가슴</p>
+            </button>
+            <button class="info" id="infoIndex2" onclick="explanation(4)">
+                <p class="name" id="nameIndex2">복근</p>
+            </button>
+            <button class="info" id="infoIndex3" onclick="explanation(6)">
+                <p class="name" id="nameIndex3">허벅지</p>
+            </button>
+            <button class="info" id="infoIndex4" onclick="explanation(8)">
+                <p class="name" id="nameIndex4">팔</p>
+            </button> -->
             
-                <!-- <img src="public/front.jpg" id = "bodyImage" height="100%" style="border-radius : 20px; margin-left : 180px; margin-bottom: 10px;"> -->
-                <!-- to rotate img -->
-                <div class="bodyImages">
-                    <img src="public/front.jpg" class="bodyImage bodyImage--front" height="100%"
-                    style="border-radius : 20px; margin-bottom: 10px;" onclick = "rotate(1)">
-                    <img src="public/back.jpg" class="bodyImage bodyImage--back" height="100%"
-                    style="border-radius : 20px;  margin-bottom: 10px;" onclick = "rotate(2)">
-                </div>
-                <script>
-                    var card = document.querySelector('.bodyImages'); 
-                    card.addEventListener("click", function () {
-                        card.classList.toggle('is-flipped');
-                    });
-                </script>
+            <!-- <img src="public/front.jpg" id = "bodyImage" height="100%" style="border-radius : 20px; margin-left : 180px; margin-bottom: 10px;"> -->
+            <!-- to rotate img -->
+            <div class="bodyImages">
+                <img src="public/front.jpg" class="bodyImage bodyImage--front" height="100%"
+                style="border-radius : 20px; margin-bottom: 10px;" onclick = "rotate(1)">
+                <img src="public/back.jpg" class="bodyImage bodyImage--back" height="100%"
+                style="border-radius : 20px;  margin-bottom: 10px;" onclick = "rotate(2)">
             </div>
+            <script>
+                var card = document.querySelector('.bodyImages'); 
+                card.addEventListener("click", function () {
+                    card.classList.toggle('is-flipped');
+                });
+            </script>
+        </div>
 
 
-            <div id="information">
-                <!-- 설명란 -->
-                <div id="explain">
-                    <p id="muscleName"></p>
-                    <p id="muscleExp">이미지의 부위를 클릭하면 상세 정보를 볼 수 있습니다.</p>
-                    <div id="videoLink" style="text-align: center;">
-                        <button class="video" id="videoLink1" onclick="videoSelect(0)">영상 #1</button>
-                        <button class="video" id="videoLink1" onclick="videoSelect(1)">영상 #2</button>
-                        <button class="video" id="videoLink1" onclick="videoSelect(2)">영상 #3</button>
+        <div id="information">
+            <!-- 설명란 -->
+            <div id="explain">
+                <p id="muscleName"></p>
+                <p id="muscleExp">이미지의 부위를 클릭하면 상세 정보를 볼 수 있습니다.</p>
+                <div id="videoLink" style="text-align: center;">
+                    <button class="video" id="videoLink1" onclick="videoSelect(0)">영상 #1</button>
+                    <button class="video" id="videoLink1" onclick="videoSelect(1)">영상 #2</button>
+                    <button class="video" id="videoLink1" onclick="videoSelect(2)">영상 #3</button>
 
-                    </div>
-                </div>
-
-                <!-- 북마크 추가 버튼 -->
-                <div id="addBookmarkButton" style="text-align:end;">
-                    <form action='/bookmarks/store' method='POST' target='temp'>
-                        <input type="text" id="bookmarkTarget" style="display : none;" name='link'>
-                        <!-- <button type = "submit" onclick = "setBookmarkedVideo()">send</button> -->
-                        <button type="submit" class="videoBookmarking" onclick="addBookmark()"
-                            style="border-radius: 20px;">북마크에
-                            추가하기</button>
-                        <script>
-                            function addBookmark() {
-                                alert("북마크에 추가되었습니다.");
-                            }
-                        </script>
-                        <!-- <script>
-                        function setBookmarkedVideo() {
-                            document.getElementById("bookmarkTarget").value = 'targetbookmark';
-                        }
-                    </script> -->
-                    </form>
-                    <iframe name="temp" style="display:none;"></iframe>
-                </div>
-
-                <!-- 영상 부분 -->
-                <iframe id="ytVideo" style="border-radius : 20px; margin-top : 5px;" width="100%" height="70%"
-                    src="https://www.youtube.com/embed" allowfullscreen>
-                </iframe>
             </div>
         </div>
-    </body>
+        <!-- 북마크 추가 버튼 -->
+        <div id="addBookmarkButton" style="text-align:end;">
+            <form action='/bookmarks/store' method='POST' target='temp'>
+                <input type="text" id="bookmarkTarget" style="display : none;" name='link'>
+                <!-- <button type = "submit" onclick = "setBookmarkedVideo()">send</button> -->
+                <% if (loggedIn) { %> 
+                    <button type="submit" class="videoBookmarking" onclick="addBookmark()"
+                        style="border-radius: 20px;">&#10133;북마크에 추가하기</button>
+                <% } %> 
+                <script>
+                    function addBookmark() {
+                        var link = document.getElementById("bookmarkTarget").value;
+                        if (link != "") { 
+                            alert("북마크에 추가되었습니다.");
+                        }
+                    }
+                </script>
+            </form>
+            <iframe name="temp" style="display:none;"></iframe>
+        </div>
 
+        <!-- 영상 부분 -->
+        <iframe id="ytVideo" style="border-radius : 20px; margin-top : 5px; border-style : none;" width="100%" height="70%"
+            src="https://www.youtube.com/embed" allowfullscreen>
+        </iframe>
+    </div>
+</body>
 </html>

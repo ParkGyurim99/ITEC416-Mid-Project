@@ -1,6 +1,5 @@
 <style>
     #top {
-        /* background-color: rgb(21, 47, 85); */
         background-color: white;
         opacity: 0.7;
         border-radius: 20px;
@@ -9,25 +8,27 @@
         margin-bottom: 10px;
     }
     .navLink {
-        /* position: absolute;
-        left: 85%;
-        top: 3.5%; */
         position: relative;
         background-color: transparent;
         color: black;
         opacity: 0.7;
-        /* border-style: solid;
-        border-color: white;  */
         padding-right : 15px;
         padding-left : 15px;
         font-size: 25px;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         border-radius: 10px;
         text-decoration-line : none;
+        cursor: pointer;
     }
-    #navBar {
+    #navBarLogIn {
         position : absolute;
-        left : 65%;
+        /* left : 60%; */
+        left : 48%;
+        top : 5.5%;
+    }
+    #navBarNotLogIn {
+        position : absolute;
+        left : 52%;
         top : 5.5%;
     }
 </style>
@@ -36,11 +37,45 @@
         <a href = "/"> 
             <img src = "public/title.jpg" height="80px" style="margin-left : 40px;">
         </a>
-        <div id = "navBar" style = "display:inline-block;">
-            <a class = "navLink" href = "/">HOME</a> |
-            <a class = "navLink" href = "/bookmark">BOOKMARK</a> |
-            <a class = "navLink" onclick = "devInfo()">INFORMATION</a>
+        <!-- <a href = "/"><img src = "home.png" height="80px"></a>
+        <a href = "/bookmark"><img src = "bookmark.png" height="80px"></a>
+        <a href = "/login"><img src = "login.png" height="80px"></a> -->
+
+        <!-- <a href = "/"><img src = "home.png" height="80px" style = "margin-left : 40px;"></a> -->
+
+        <!-- <div id = "navBar" style = "display:inline-block;">
+            <a class = "navLink" href = "/">🏠 HOME</a> |
+            <% if (loggedIn) { %> 
+            <a class = "navLink" href = "/bookmark">&#128209; BOOKMARK</a> |
+            <% } %>
+            <% if (!loggedIn) { %>
+            <a class = "navLink" href = "/login">&#128100; LOG IN</a> |
+            <% } %>
+            <a class = "navLink" onclick = "devInfo()">ℹ️ INFORMATION</a> |
+            
+            <% if (loggedIn) { %> 
+                <a class = "navLink" href = "/logout">&#128100; LOG OUT</a>
+            <% } %>
+        </div> -->
+
+        <% if (loggedIn) { %> 
+        <div id = "navBarLogIn" style = "display:inline-block;">
+            <a class = "navLink" href = "/">🏠 HOME</a> |
+            <a class = "navLink" href = "/bookmark">&#128209; BOOKMARK</a> |
+            <a class = "navLink" href = "/logout">&#128100; SIGN OUT</a> |
+            <a class = "navLink" onclick = "devInfo()">ℹ️ INFORMATION</a>
         </div>
+        <% } %>
+
+        <% if (!loggedIn) { %> 
+        <div id = "navBarNotLogIn" style = "display:inline-block;">
+            <a class = "navLink" href = "/">🏠 HOME</a> |
+            <a class = "navLink" href = "/login">&#128100; SIGN IN</a> |
+            <a class = "navLink" href = "/register">&#128101; SIGN UP</a> |
+            <a class = "navLink" onclick = "devInfo()">ℹ️ INFORMATION</a> 
+        </div>
+        <% } %>
+
         <script> 
             function devInfo() {
                 alert("StandUP! : Web Trainer for You\n\n- Developer Info.\n\n박규림 PARK GYURIM\nguy021898@naver.com\n+8210-7672-9902\nKOREA");

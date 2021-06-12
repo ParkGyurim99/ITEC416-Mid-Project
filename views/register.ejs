@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stand UP! :: Register</title>
+    <style>
+        body {
+            /* background-size : cover; */
+            background-size: auto 117%;
+        }   
+        .registerBox {
+            text-align: center;
+            width : 400px;
+            height: 400px;
+            padding : 50px;
+            margin-left : 32%;
+            margin-top : 100px;
+            background-color: white;
+            /* rgba(255, 255, 255, 1); */
+            border-radius: 20px;
+            color : black;
+            opacity: 0.7;
+        }
+
+        .registerInput {
+            text-align: center;
+            border-style : none none solid none;
+        }
+    </style>
+</head>
+<%- include('layouts/header'); -%>
+
+<body background="public/background.jpg">
+    <div class = "registerBox">
+        <a href = "/login" style = "text-decoration-line : none;">Already have an account? Click here to Sign in</a>
+        <form action="/users/register" method="POST">
+            <img src = "public/registerTitle.png" width = "400px" style = " border-radius: 20px;">
+            <label>USER NAME</label><br>
+            <input type = "text" class = "registerInput register-username" placeholder= "Enter Username" name = "username">
+            <br><br>
+            <label>PASSWORD</label><br>
+            <input type = "password" class = "registerInput register-password" placeholder= "Enter Password" name = "password">
+            <br><br>
+            <button type = "submit" class = "register-submit" name = "registerSubmit">Sign Up</button>
+        </form>
+    </div>
+</body>
+</html>

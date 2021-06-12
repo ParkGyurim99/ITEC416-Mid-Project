@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stand UP! : Bookmark</title>
+    <title>Stand UP! :: Bookmark</title>
     <style>
         body {
-            /* background-image : url("pubic/background.jpg"); */
-            background-size : cover;
+            /* background-size: cover; */
+            background-size: auto 114%;
         }   
 
         #box {
@@ -27,7 +27,7 @@
             /* position: relative; */
             float: right;
             background-color : white;
-            width : 28%;
+            width : 25%;
             height : 600px;
             margin-left : 10px;
             opacity: 0.7;
@@ -47,17 +47,16 @@
 
 <body background="public/background.jpg">
     <div id = "box">
-        <!-- <iframe id = "leftBox"name = "videoFrame"></iframe> -->
-        <iframe id="leftBox" name = "videoFrame" style="border-radius : 20px;" width="100%" height="80%"
-                src="https://www.youtube.com/embed" allowfullscreen>
-            </iframe>
+        <iframe id="leftBox" name = "videoFrame" style="border-radius : 20px; border-style : none;" width="100%" height="80%"
+            src="https://www.youtube.com/embed" allowfullscreen>
+        </iframe>
 
-        <div id = "rightBox">
-            <h2 style = "color : white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-                북마크한 영상</h2>
+        <div id = "rightBox" style = "padding-left : 30px;">
+            <h1 style = "padding-top : 10px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                &#128209; BOOKMARK LIST</h1>
             <% for (var i=0; i<bookmarks.length; i++) { %>
             <a href = " <%- bookmarks[i].link -%> " target = "videoFrame">
-            bookmark <%- i %>
+                bookmark <%- i %>
             </a><br>
             <% } %>
         </div>

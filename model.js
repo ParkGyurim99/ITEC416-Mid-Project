@@ -65,65 +65,70 @@ function videoSelect(index) {
     document.getElementById("bookmarkTarget").value = videoLink[n][index];
 }
 
-function rotate() {
-    var img = document.getElementById("body");
-    if (img.getAttribute("src") == "public/front.jpg") {
-        img.setAttribute("src", "public/back.jpg");
+function rotate(number) {
+    var img = document.getElementById("bodyImage");
+    // if (img.getAttribute("src") == "public/front.jpg") {
+    if (number == 1) {
+        //img.setAttribute("src", "public/back.jpg");
         
         // 후면 버튼 로케이션 설정
         document.getElementById("nameIndex0").innerHTML = "승모";
-        document.getElementById("infoIndex0").style.left = '350px';
+        document.getElementById("infoIndex0").style.left = '290px';
         document.getElementById("infoIndex0").style.top = '110px';
         document.getElementById("infoIndex0").setAttribute("onclick", "explanation(1)")
 
         document.getElementById("nameIndex1").innerHTML = "광배";
-        document.getElementById("infoIndex1").style.left = '370px';
+        document.getElementById("infoIndex1").style.left = '310px';
         document.getElementById("infoIndex1").style.top = '200px';
         document.getElementById("infoIndex1").setAttribute("onclick", "explanation(3)");
 
         document.getElementById("nameIndex2").innerHTML = "코어";
-        document.getElementById("infoIndex2").style.left = '330px';
+        document.getElementById("infoIndex2").style.left = '270px';
         document.getElementById("infoIndex2").style.top = '250px';
         document.getElementById("infoIndex2").setAttribute("onclick", "explanation(5)");
 
         document.getElementById("nameIndex3").innerHTML = "엉덩이";
-        document.getElementById("infoIndex3").style.left = '355px';
+        document.getElementById("infoIndex3").style.left = '295px';
         document.getElementById("infoIndex3").style.top = '350px';
         document.getElementById("infoIndex3").setAttribute("onclick", "explanation(7)");
 
         document.getElementById("nameIndex4").innerHTML = "종아리";
-        document.getElementById("infoIndex4").style.left = '360px';
+        document.getElementById("infoIndex4").style.left = '300px';
         document.getElementById("infoIndex4").style.top = '550px';
         document.getElementById("infoIndex4").setAttribute("onclick", "explanation(9)");
+
+        number = 2;
     }
     
     else {
-        img.setAttribute("src", "public/front.jpg");
+        //img.setAttribute("src", "public/front.jpg");
         
         // 전면 버튼 로케이션 설정
         document.getElementById("nameIndex0").innerHTML = "어깨";
-        document.getElementById("infoIndex0").style.left = "400px";
+        document.getElementById("infoIndex0").style.left = "340px";
         document.getElementById("infoIndex0").style.top = "130px";
         document.getElementById("infoIndex0").setAttribute("onclick", "explanation(0)")
 
         document.getElementById("nameIndex1").innerHTML = "가슴";
-        document.getElementById("infoIndex1").style.left = "350px";
+        document.getElementById("infoIndex1").style.left = "290px";
         document.getElementById("infoIndex1").style.top = "180px";
         document.getElementById("infoIndex1").setAttribute("onclick", "explanation(2)");
 
         document.getElementById("nameIndex2").innerHTML = "복근";
-        document.getElementById("infoIndex2").style.left = "330px";
+        document.getElementById("infoIndex2").style.left = "270px";
         document.getElementById("infoIndex2").style.top = "250px";
         document.getElementById("infoIndex2").setAttribute("onclick", "explanation(4)");
 
         document.getElementById("nameIndex3").innerHTML = "허벅지";
-        document.getElementById("infoIndex3").style.left = "355px";
+        document.getElementById("infoIndex3").style.left = "295px";
         document.getElementById("infoIndex3").style.top = "400px";
         document.getElementById("infoIndex3").setAttribute("onclick", "explanation(6)");
 
         document.getElementById("nameIndex4").innerHTML = "팔";
-        document.getElementById("infoIndex4").style.left = "400px";
+        document.getElementById("infoIndex4").style.left = "340px";
         document.getElementById("infoIndex4").style.top = "220px";
         document.getElementById("infoIndex4").setAttribute("onclick", "explanation(8)");
+
+        number = 1;
     }
 }

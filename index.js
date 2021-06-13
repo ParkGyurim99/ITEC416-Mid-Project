@@ -35,7 +35,6 @@ app.use("*", (req, res, next)=> {
 })
 
 app.get('/', (req,res) => {
-    // res.sendFile(path.resolve(__dirname, 'views/index.html'))
     res.render('index');
 })
 app.get('/login', (req,res) => {

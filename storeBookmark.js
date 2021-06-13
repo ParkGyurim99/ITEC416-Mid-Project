@@ -7,6 +7,7 @@ module.exports = (req, res) => {
     console.log(req.body.link)
     console.log(req.session)
     bookmark.create({
+        userid : req.session.userId,
         link : req.body.link
     }, (error, bookmark) => {
         console.log(error, bookmark);

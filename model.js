@@ -83,18 +83,18 @@ function rotate(number) {
         document.getElementById("infoIndex1").setAttribute("onclick", "explanation(3)");
 
         document.getElementById("nameIndex2").innerHTML = "코어";
-        document.getElementById("infoIndex2").style.left = '270px';
+        document.getElementById("infoIndex2").style.left = '280px';
         document.getElementById("infoIndex2").style.top = '250px';
         document.getElementById("infoIndex2").setAttribute("onclick", "explanation(5)");
 
         document.getElementById("nameIndex3").innerHTML = "엉덩이";
         document.getElementById("infoIndex3").style.left = '295px';
-        document.getElementById("infoIndex3").style.top = '350px';
+        document.getElementById("infoIndex3").style.top = '330px';
         document.getElementById("infoIndex3").setAttribute("onclick", "explanation(7)");
 
         document.getElementById("nameIndex4").innerHTML = "종아리";
-        document.getElementById("infoIndex4").style.left = '300px';
-        document.getElementById("infoIndex4").style.top = '550px';
+        document.getElementById("infoIndex4").style.left = '310px';
+        document.getElementById("infoIndex4").style.top = '520px';
         document.getElementById("infoIndex4").setAttribute("onclick", "explanation(9)");
 
         number = 2;

@@ -34,7 +34,6 @@
 
 <body background="public/background.jpg">
     <div class = "registerBox">
-        <a href = "/login" style = "text-decoration-line : none;">Already have an account? Click here to Sign in</a>
         <form action="/users/register" method="POST">
             <img src = "public/registerTitle.png" width = "400px" style = " border-radius: 20px;">
             <label>USER NAME</label><br>
@@ -44,7 +43,8 @@
             <input type = "password" class = "registerInput register-password" placeholder= "Enter Password" name = "password">
             <br><br>
             <button type = "submit" class = "register-submit" name = "registerSubmit">Sign Up</button>
-        </form>
+        </form><br>
+        <a href = "/login" style = "text-decoration-line : none;">Already have an account? Click here to Sign in</a>
     </div>
 </body>
 </html>

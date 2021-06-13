@@ -2,7 +2,7 @@
   "name": "itec416-project",
   "version": "1.0.0",
   "description": "ITEC416_Project",
-  "main": "index.ejs",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },

@@ -15,6 +15,9 @@
   ],
   "author": "Parkgyurim",
   "license": "ISC",
+  "engines": {
+    "node": "14.15.4"
+  },
   "bugs": {
     "url": "https://github.com/ParkGyurim99/ITEC416-Project/issues"
   },

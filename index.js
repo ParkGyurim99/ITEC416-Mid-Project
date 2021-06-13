@@ -73,6 +73,15 @@ app.post('/users/register', storeUserController);
 // sign in 
 app.post('/users/login', loginUserController);
 
-app.listen(4000, () => {
-    console.log('App listening on port 4000');
+// app.listen(4000, () => {
+//     console.log('App listening on port 4000');
+// })
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 4000;
+}
+
+app.listen(port, () => {
+    console.log('app listening... on port' + port);
 })

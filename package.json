@@ -4,7 +4,7 @@
   "description": "ITEC416_Project",
   "main": "index.ejs",
   "scripts": {
-    "start": "nodemon index.ejs"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",

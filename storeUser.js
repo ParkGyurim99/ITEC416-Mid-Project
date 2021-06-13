@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const User = require('./users');
 const path = require('path');
 const { render } = require('ejs');
-mongoose.connect('mongodb://localhost/itec416', {useNewUrlParser: true, useUnifiedTopology: true}).then(() => console.log("user go")).catch(err=>console.log(err));
+// mongoose.connect('mongodb://localhost/itec416', {useNewUrlParser: true, useUnifiedTopology: true}).then(() => console.log("user go")).catch(err=>console.log(err));
+mongoose.connect('mongodb+srv://parkgyurim:parkgyurim99@cluster0.bpisw.mongodb.net/test', {useNewUrlParser: true, useUnifiedTopology: true}).then(() => console.log("user go")).catch(err=>console.log(err));
 
 module.exports = (req, res) => {
     console.log(req.body.username)

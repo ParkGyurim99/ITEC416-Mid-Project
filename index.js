@@ -12,7 +12,8 @@ const loginUserController = require('./loginUser');
 const logoutController = require('./logout');
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/itec416', {useNewUrlParser: true, useUnifiedTopology: true});
+// mongoose.connect('mongodb://localhost/itec416', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://parkgyurim:parkgyurim99@cluster0.bpisw.mongodb.net/test', {useNewUrlParser: true, useUnifiedTopology: true});
 
 app.use(express.static('./'));
 app.use(express.static('public'));
@@ -44,7 +45,7 @@ app.get('/register', (req,res) => {
     res.render('register');
 })
 app.get('/bookmark', async (req, res) => {
-    const bookmarks = await bookmark.find({})
+    const bookmarks = await bookmark.find({}) //.populate('userid'); -> db load fail with this.
     res.render('bookmark', { bookmarks });
 })
 app.get('/login', loginController);

@@ -2,7 +2,7 @@
   "name": "itec416-project",
   "version": "1.0.0",
   "description": "ITEC416_Project",
-  // "main": "index.js",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
@@ -16,7 +16,7 @@
   "author": "Parkgyurim",
   "license": "ISC",
   "engines": {
-    "node": "14.15.4"
+    "node": "14.16.1"
   },
   "bugs": {
     "url": "https://github.com/ParkGyurim99/ITEC416-Project/issues"

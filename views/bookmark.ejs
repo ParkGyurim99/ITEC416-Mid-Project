@@ -52,10 +52,10 @@
         <div id = "rightBox" style = "padding-left : 30px;">
             <h1 style = "padding : 20px 0px 20px 20px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">📂 BOOKMARK LIST</h1>
             <br>
-            <% for (var i=0; i<bookmarks.length; i++) { %>
+            <% for (var i=0, n = 1; i<bookmarks.length; i++) { %>
                 <% if (bookmarks[i].userid == loggedIn) { %>
                 <a href = " <%- bookmarks[i].link -%> " target = "videoFrame" style = "padding-left : 20px;">
-                    Bookmarked video #<%- i + 1 %> 
+                    Bookmarked video #<%- n++ %> 
                 </a><br><br>
                 <% } %>
             <% } %>

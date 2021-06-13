@@ -56,7 +56,12 @@
         <div id = "navBarLogIn" style = "display:inline-block;">
             <a class = "navLink" href = "/">🏠 HOME</a> |
             <a class = "navLink" href = "/bookmark">📂 BOOKMARK</a> |
-            <a class = "navLink" href = "/logout">&#128100; SIGN OUT</a> |
+            <a class = "navLink" href = "/logout" onclick = "logout()">&#128100; SIGN OUT</a> |
+            <script>
+                function logout() {
+                    alert("로그아웃되었습니다.");
+                }
+            </script>
             <a class = "navLink" onclick = "devInfo()">ℹ️ INFORMATION</a>
         </div>
         <% } %>

@@ -17,6 +17,7 @@ module.exports = (req, res) => {
             res.redirect('/');
         })
     }
+    
     // #1
     // User.create({
     //     username : req.body.username,
